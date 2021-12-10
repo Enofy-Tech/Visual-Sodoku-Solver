@@ -1,11 +1,24 @@
+import tkinter
 from tkinter import *
-
-root = Tk()
+from tkinter import PhotoImage
+root=Tk()
 root.title("Sudoku Solver")
-root.geometry("800x800")
+root.geometry("325x500")
+root.config(bg="#100e17")
+
+tkinter.Button(root, text="Solve", font="Bahnschrift 20", bg="black", fg="white", activebackground="red", activeforeground="black",
+               borderwidth=2, relief=tkinter.RAISED, cursor="hand2").place(x=10, y=300)
+
+tkinter.Button(root, text="Enter", font="Bahnschrift 20", bg="black", fg="white", activebackground="red", activeforeground="black",
+               borderwidth=2, relief=tkinter.RAISED, cursor="hand2").place(x=216, y=300)
+
+tkinter.Button(root, text="Reset", font="Bahnschrift 20", bg="black", fg="white", activebackground="red", activeforeground="black",
+               borderwidth=2, relief=tkinter.RAISED, cursor="hand2").place(x=216, y=400)
+
+tkinter.Button(root, text="Generate", font="Bahnschrift 20", bg="black", fg="white", activebackground="red", activeforeground="black",
+               borderwidth=2, relief=tkinter.RAISED, cursor="hand2").place(x=10, y=400)
 
 label = Label(root, text="Fill the numbers in and to solve press SOLVE").grid(row=0, column=1, columnspan=10)
-
 
 errLabel = Label(root, text="", fg="red")
 errLabel.grid(row=15, column=1, columnspan=10, pady=5)
@@ -64,12 +77,6 @@ def getValues():
 
         board.append(rows)
 
-
-btn = Button(root, command=getValues, text="Solve", width=10)
-btn.grid(row=20, column=1, columnspan=5, pady=20)
-
-btn = Button(root, command=getValues, text="Solve", width=10)
-btn.grid(row=20, column=1, columnspan=5, pady=20)
 
 draw9x9Grd()
 root.mainloop()
