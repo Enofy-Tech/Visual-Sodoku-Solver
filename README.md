@@ -1,1 +1,1 @@
-# Visual-Sodoku-Solver
+# Visual-sudoku-Solver
